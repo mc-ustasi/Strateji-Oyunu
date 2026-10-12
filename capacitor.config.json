@@ -1,0 +1,9 @@
+{
+  "appId": "com.dunyastratejisi.app",
+  "appName": "Dünya Stratejisi",
+  "webDir": "www",
+  "backgroundColor": "#0e202e",
+  "android": {
+    "allowMixedContent": false
+  }
+}

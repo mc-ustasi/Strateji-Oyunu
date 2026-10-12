@@ -1,0 +1,20 @@
+{
+  "name": "dunya-stratejisi",
+  "version": "1.0.0",
+  "description": "Çok çağlı 2D dünya strateji oyunu (HTML5 + Capacitor, Android)",
+  "private": true,
+  "scripts": {
+    "serve": "npx --yes serve www -l 8080",
+    "android:add": "cap add android && node scripts/patch-android.js",
+    "android:sync": "node scripts/patch-android.js && cap sync android",
+    "android:open": "cap open android",
+    "android:apk": "cap sync android && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d1b26">
+<title>Dünya Stratejisi</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Yükleniyor -->
+  <div id="loading"><div>Harita hazırlanıyor…</div></div>
+
+  <!-- Ana menü -->
+  <section id="s-title" class="screen">
+    <canvas id="bg"></canvas>
+    <div class="title-box">
+      <h1>Dünya<br>Stratejisi</h1>
+      <p class="sub">Altı çağ. Tek harita. Bütün dünya senin hamleni bekliyor.</p>
+      <div class="btn-col">
+        <button class="btn primary" data-act="new">Yeni Oyun</button>
+        <button class="btn" data-act="continue" id="btn-continue">Devam Et</button>
+        <button class="btn ghost" data-act="help">Nasıl Oynanır</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Çağ seçimi -->
+  <section id="s-era" class="screen">
+    <header class="bar"><button class="btn ghost sm" data-act="to-title">‹ Geri</button><h2>Çağ ve Senaryo Seç</h2></header>
+    <div id="era-list" class="era-list"></div>
+  </section>
+
+  <!-- Ülke seçimi -->
+  <section id="s-country" class="screen">
+    <header class="bar"><button class="btn ghost sm" data-act="to-era">‹ Çağlar</button><h2 id="country-title">Ülke Seç</h2></header>
+    <div class="split">
+      <div id="country-list" class="list"></div>
+      <div id="country-detail" class="detail"></div>
+    </div>
+  </section>
+
+  <!-- Oyun -->
+  <section id="s-game" class="screen">
+    <canvas id="map"></canvas>
+
+    <div id="hud">
+      <button id="h-country" class="hud-btn" data-act="mycountry"><i id="h-dot" class="dot"></i><span id="h-name"></span></button>
+      <div class="res"><span title="Altın">💰 <b id="h-gold">0</b><small id="h-gold-d"></small></span>
+        <span title="Hammadde">⛏ <b id="h-mat">0</b><small id="h-mat-d"></small></span>
+        <span title="İnsan gücü">👥 <b id="h-man">0</b><small id="h-man-d"></small></span></div>
+      <div class="date" id="h-date"></div>
+      <div class="speed">
+        <button class="hud-btn" data-act="playpause" id="b-play">▶</button>
+        <button class="hud-btn" data-act="speed" id="b-speed">1×</button>
+        <button class="hud-btn" data-act="next" title="Sonraki tur">⏭</button>
+        <button class="hud-btn" data-act="menu">☰</button>
+      </div>
+    </div>
+
+    <div id="rail">
+      <button class="rail-btn" data-act="tech" title="Teknoloji">🔬<span>Teknoloji</span></button>
+      <button class="rail-btn" data-act="diplo" title="Diplomasi">🤝<span>Diplomasi</span></button>
+      <button class="rail-btn" data-act="mapmode" id="b-mode" title="Harita modu">🗺<span id="mode-lbl">Siyasi</span></button>
+      <button class="rail-btn" data-act="gocap" title="Başkent">🎯<span>Başkent</span></button>
+      <button class="rail-btn" data-act="log" title="Olaylar">📜<span>Olaylar</span></button>
+    </div>
+
+    <div id="panel" hidden></div>
+    <div id="toasts"></div>
+  </section>
+
+  <!-- Pencere -->
+  <div id="modal" hidden>
+    <div id="modal-card">
+      <header><h3 id="modal-title"></h3><button class="x" data-act="close">✕</button></header>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/land.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
